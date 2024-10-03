@@ -80,6 +80,15 @@
 
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
+(menu-bar-mode 0)
+
+(map! :i
+      "C-[" #'normal-mode)
+(map! :ni
+      "s-e" #'recentf-open-files
+      "s-z" #'undo-tree-undo
+      "s-y" #'undo-tree-redo)
+
 
 (after! eglot
   `((java-mode groovy-mode) . "jdtls"
